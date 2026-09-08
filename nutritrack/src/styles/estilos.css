@@ -1,0 +1,261 @@
+/* Estilos generales de NutriTrack */
+
+:root {
+    --color-primario: #2f9e6b;
+    --color-primario-oscuro: #217a51;
+    --color-fondo: #f4f8f6;
+    --color-texto: #1c1f2a;
+    --color-texto-secundario: #5b6270;
+    --color-borde: #dfe6e2;
+    --color-error: #c0392b;
+    --color-error-fondo: #fbeceb;
+    --radio: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+a {
+    color: var(--color-primario-oscuro);
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+/* Encabezado / menu */
+
+.encabezado {
+    background-color: #133a2b;
+    color: #ffffff;
+}
+
+.encabezado-contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.marca-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.logo-menu {
+    font-size: 1.4rem;
+}
+
+.lista-menu {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.enlace-menu {
+    color: #cdeadb;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.enlace-menu:hover {
+    color: #ffffff;
+}
+
+.enlace-activo {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+/* Contenedor general de paginas */
+
+.contenedor-pagina {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+}
+
+.tarjeta-formulario {
+    background-color: #ffffff;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 28px;
+}
+
+.tarjeta-centrada {
+    text-align: center;
+}
+
+.texto-introductorio {
+    color: var(--color-texto-secundario);
+    line-height: 1.5;
+}
+
+/* Formulario */
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.etiqueta-campo {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    padding: 10px 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    width: 100%;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    outline: 2px solid var(--color-primario);
+}
+
+.campo-con-error input,
+.campo-con-error select,
+.campo-con-error textarea {
+    border-color: var(--color-error);
+    background-color: var(--color-error-fondo);
+}
+
+.mensaje-error {
+    margin: 0;
+    color: var(--color-error);
+    font-size: 0.82rem;
+}
+
+.fila-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.grupo-radios {
+    display: flex;
+    gap: 20px;
+}
+
+.opcion-radio {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+}
+
+.opcion-radio input {
+    width: auto;
+}
+
+.boton-principal {
+    background-color: var(--color-primario);
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.boton-principal:hover {
+    background-color: var(--color-primario-oscuro);
+}
+
+.boton-enlace {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+/* Vista de cuidado nutricional */
+
+.lista-resumen,
+.lista-recomendaciones {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.lista-recomendaciones li {
+    margin-bottom: 8px;
+}
+
+/* Vista Acerca de */
+
+.lista-perfiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.tarjeta-perfil {
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 20px;
+    text-align: center;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 3px solid var(--color-primario);
+}
+
+.descripcion-perfil {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Diseño adaptable */
+
+@media (max-width: 600px) {
+    .fila-doble {
+        grid-template-columns: 1fr;
+    }
+
+    .encabezado-contenedor {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tarjeta-formulario {
+        padding: 20px;
+    }
+}
